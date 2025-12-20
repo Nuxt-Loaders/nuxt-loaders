@@ -15,7 +15,9 @@ export default createConfigForNuxt({
   },
 }).append({
   rules: {
+    "@typescript-eslint/no-empty-object-type": "off",
     "@stylistic/quotes": ["error", "double", { avoidEscape: true }],
+    "@stylistic/brace-style": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "vue/multi-word-component-names": "off",
