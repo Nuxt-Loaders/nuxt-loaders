@@ -174,10 +174,8 @@ export const handleRemoveLoader = async (slug: string, loadersConfig: LoadersCon
     }
 
     if (loader && existsSync(`${loadersPath}/${loader.file}`)) {
-        if (!configSync) {
-            await removeLoaderFromConfig(slug);
-            logInfoCli(`Removed loader '${slug}' from config.`);
-        }
+        await removeLoaderFromConfig(slug);
+        logInfoCli(`Removed loader '${slug}' from config.`);
         unlinkSync(`${loadersPath}/${loader.file}`);
         logInfoCli(`Deleted loader file: ${loader.file}`);
     } else {
