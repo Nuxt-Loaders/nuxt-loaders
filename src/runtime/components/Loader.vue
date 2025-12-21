@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component v-if="loaderName" :is="loaderName" />
+    <component :is="loaderName" v-if="loaderName" />
   </div>
 </template>
 
