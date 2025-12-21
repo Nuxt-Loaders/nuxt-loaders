@@ -1,6 +1,6 @@
 <template>
   <Loader v-if="isLoading" />
-  <TripleBarLoader  class="text-black"/>
+  <StepGradientLoader  class="text-black"/>
 
   <NuxtPage />
 
@@ -10,7 +10,7 @@
 import Loader from "../../src/runtime/components/Loader.vue";
 import { useLoader } from "../../src/runtime/composables/useLoader";
 import CircularLoader from "../../src/templates/CircularLoader.vue"
-import TripleBarLoader from "../../src/templates/TripleBarLoader.vue"
+import StepGradientLoader from "../../src/templates/StepGradientLoader.vue"
 
 const config = useLoader();
 const { isLoading } = config;
