@@ -1,15 +1,27 @@
-import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, addImportsDir } from "@nuxt/kit";
+import {
+  defineNuxtModule,
+  addPlugin,
+  createResolver,
+  addComponentsDir,
+  addImportsDir,
+} from "@nuxt/kit";
 import tailwindcss from "@tailwindcss/vite";
-import { getDefaultLoader, validateLoaderRules } from "./runtime/lib/utils/route-rules";
+import {
+  getDefaultLoader,
+  validateLoaderRules,
+} from "./runtime/lib/utils/route-rules";
 import { logInfo } from "./runtime/lib/log";
+import { existsSync } from "node:fs";
+import { writeFile } from "node:fs/promises";
 
+const DEFAULT_LOADERS_PATH = "app/components/loaders";
 
 export interface ModuleOptions {
   autoSetup: boolean;
   loadersDir?: string;
-  routeRules: Record<string, string>
-  _activeLoader: string
-  _defaultLoader: string
+  routeRules: Record<string, string>;
+  _activeLoader: string;
+  _defaultLoader: string;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -22,39 +34,55 @@ export default defineNuxtModule<ModuleOptions>({
     autoSetup: true,
     routeRules: {},
     _defaultLoader: "",
-    _activeLoader: ""
+    _activeLoader: "",
   },
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
-    nuxt.options.css ??= []
+    nuxt.options.css ??= [];
     nuxt.options.css.push(resolver.resolve("./runtime/tailwind.css"));
 
-    const path = await import('path');
+    const path = await import("node:path");
     const loadersDirPath = options.loadersDir
       ? path.resolve(nuxt.options.rootDir, options.loadersDir)
-      : path.resolve(nuxt.options.rootDir, 'app/components/loaders');
+      : path.resolve(nuxt.options.rootDir, DEFAULT_LOADERS_PATH);
 
-    logInfo('Registering loaders directory:', loadersDirPath);
+    const configExists = existsSync("loaders.config.json");
 
-    const { resolveFiles, addTemplate } = await import('@nuxt/kit');
+    if (!configExists) {
+      await writeFile(
+        "loaders.config.json",
+        JSON.stringify({
+          loadersDir: options.loadersDir ?? DEFAULT_LOADERS_PATH,
+          installedLoaders: {},
+        })
+      );
+    }
 
-    // Find all loader components
-    const loaderFiles = await resolveFiles(loadersDirPath, '**/*.vue');
+    logInfo("Registering loaders directory:", loadersDirPath);
 
-    // Generate a plugin to register these components synchronously
+    const { resolveFiles, addTemplate } = await import("@nuxt/kit");
+
+    const loaderFiles = await resolveFiles(loadersDirPath, "**/*.vue");
+
     const template = addTemplate({
-      filename: 'loader-plugin.mjs',
+      filename: "loader-plugin.mjs",
       getContents: () => {
-        const imports = loaderFiles.map((file, index) => {
-          const name = file.split('/').pop()?.replace('.vue', '') || `Loader${index}`;
-          return `import ${name} from '${file}'`;
-        }).join('\n');
+        const imports = loaderFiles
+          .map((file, index) => {
+            const name =
+              file.split("/").pop()?.replace(".vue", "") || `Loader${index}`;
+            return `import ${name} from '${file}'`;
+          })
+          .join("\n");
 
-        const registrations = loaderFiles.map((file, index) => {
-          const name = file.split('/').pop()?.replace('.vue', '') || `Loader${index}`;
-          return `nuxtApp.vueApp.component('${name}', ${name})`;
-        }).join('\n');
+        const registrations = loaderFiles
+          .map((file, index) => {
+            const name =
+              file.split("/").pop()?.replace(".vue", "") || `Loader${index}`;
+            return `nuxtApp.vueApp.component('${name}', ${name})`;
+          })
+          .join("\n");
 
         return `
 import { defineNuxtPlugin } from '#app'
@@ -64,7 +92,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   ${registrations}
 })
         `;
-      }
+      },
     });
 
     addPlugin(template.dst);
@@ -74,19 +102,24 @@ export default defineNuxtPlugin((nuxtApp) => {
       global: true,
     });
 
-    addImportsDir(resolver.resolve("./runtime/composables"))
+    addImportsDir(resolver.resolve("./runtime/composables"));
 
-    nuxt.options.vite.plugins ??= []
-    nuxt.options.vite.plugins.push(tailwindcss())
+    nuxt.options.vite.plugins ??= [];
+    nuxt.options.vite.plugins.push(tailwindcss());
 
     const validatedLoaderRules = validateLoaderRules(options.routeRules);
 
-
-    nuxt.options.runtimeConfig.public.loaders = { ...options, routeRules: validatedLoaderRules, loadersDir: loadersDirPath };
+    nuxt.options.runtimeConfig.public.loaders = {
+      ...options,
+      routeRules: validatedLoaderRules,
+      loadersDir: loadersDirPath,
+    };
     if (options.routeRules && Object.keys(options.routeRules).length > 0) {
-      nuxt.options.runtimeConfig.public.loaders._activeLoader = getDefaultLoader(validatedLoaderRules) ?? "";
+      nuxt.options.runtimeConfig.public.loaders._activeLoader =
+        getDefaultLoader(validatedLoaderRules) ?? "";
     }
-    nuxt.options.runtimeConfig.public.loaders._defaultLoader = getDefaultLoader(validatedLoaderRules) ?? "";
+    nuxt.options.runtimeConfig.public.loaders._defaultLoader =
+      getDefaultLoader(validatedLoaderRules) ?? "";
 
     addPlugin(resolver.resolve("./runtime/plugin"));
   },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component v-if="loaderName" :is="loaderName" />
+    <component :is="loaderName" v-if="loaderName" />
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { useNuxtApp } from '#app';
 import { computed } from 'vue';
-import { logWarn } from '../../lib/log';
+import { logWarn } from '../lib/log';
 
 const nuxt = useNuxtApp();
 

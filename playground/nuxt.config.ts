@@ -1,22 +1,20 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-15",
-  css: ['./playground/app/assets/css/main.css'],
   modules: ["../src/module"],
   devtools: { enabled: true },
+  css: ["./playground/app/assets/css/main.css"],
+  compatibilityDate: "2025-07-15",
+  vite: {
+    plugins: [tailwindcss()],
+  },
   loaders: {
     autoSetup: true,
     loadersDir: "./app/components/load",
     routeRules: {
       "/": "BasicLoader",
       "/about": "BasicLoader",
-      "/home": "BasicLoader"
-    }
+      "/home": "BasicLoader",
+    },
   },
-  vite: {
-    plugins: [
-      tailwindcss()
-    ]
-  }
 });
