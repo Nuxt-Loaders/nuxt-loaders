@@ -19,7 +19,7 @@
     "file": "CircularLoader.vue",
     "version": "v1.0.0"
   },
-  "dot": {
+  "dots": {
     "file": "TriDotLoader.vue",
     "version": "v1.0.0"
   }
