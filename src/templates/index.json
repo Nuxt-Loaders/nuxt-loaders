@@ -1,14 +1,26 @@
 {
-    "basic": {
-        "file": "BasicLoader.vue",
-        "version": "v1.0.0"
-    },
-    "circular": {
-        "file": "CircularLoader.vue",
-        "version": "v1.0.0"
-    },
-    "dots": {
-        "file": "DotsLoader.vue",
-        "version": "v1.0.0"
-    }
+  "pulseRail": {
+    "file": "PulseRailLoader.vue",
+    "version": "v1.0.0"
+  },
+  "tripleBar": {
+    "file": "TripleBarLoader.vue",
+    "version": "v1.0.0"
+  },
+  "tripleFlip": {
+    "file": "TripleFlipLoader.vue",
+    "version": "v1.0.0"
+  },
+  "stepGradient": {
+    "file": "StepGradientLoader.vue",
+    "version": "v1.0.0"
+  },
+  "circular": {
+    "file": "CircularLoader.vue",
+    "version": "v1.0.0"
+  },
+  "dots": {
+    "file": "TriDotLoader.vue",
+    "version": "v1.0.0"
+  }
 }
