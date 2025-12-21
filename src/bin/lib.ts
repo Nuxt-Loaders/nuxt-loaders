@@ -7,7 +7,7 @@ import { omitKey } from "./utils";
 
 const ALLOWED_OPERATIONS = ["add", "remove"];
 const REMOTE_TEMPLATE_STORE =
-  "https://raw.githubusercontent.com/haileabt/nuxt-loaders/feat/cli/src/templates";
+  "https://raw.githubusercontent.com/haileabt/nuxt-loaders/main/src/templates";
 
 export const operationAllowed = (operation: string) => {
   if (!ALLOWED_OPERATIONS.includes(operation)) {
