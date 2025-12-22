@@ -1,6 +1,6 @@
 {
   "name": "nuxt-loaders",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple loading screen engine for Nuxt 4+",
   "repository": "haileabt/nuxt-loaders",
   "license": "MIT",
