@@ -1,17 +1,17 @@
 {
-  "pulseRail": {
+  "pulse-bail": {
     "file": "PulseRailLoader.vue",
     "version": "v1.0.0"
   },
-  "tripleBar": {
+  "triple-bar": {
     "file": "TripleBarLoader.vue",
     "version": "v1.0.0"
   },
-  "tripleFlip": {
+  "triple-flip": {
     "file": "TripleFlipLoader.vue",
     "version": "v1.0.0"
   },
-  "stepGradient": {
+  "step-gradient": {
     "file": "StepGradientLoader.vue",
     "version": "v1.0.0"
   },
