@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <component :is="loaderName" v-if="loaderName" />
+  <div :class="[className]">
+    <component :is="loaderName" />
   </div>
 </template>
 
@@ -22,5 +22,7 @@ const loaderName = computed(() => {
 
   return name;
 });
+
+withDefaults(defineProps<{ className?: string }>(), { className: "" })
 
 </script>

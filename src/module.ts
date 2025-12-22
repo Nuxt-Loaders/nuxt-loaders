@@ -20,6 +20,7 @@ export interface ModuleOptions {
   autoSetup: boolean;
   loadersDir?: string;
   routeRules: Record<string, string>;
+  disableDefault: boolean;
   _activeLoader: string;
   _defaultLoader: string;
 }
@@ -33,7 +34,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     autoSetup: true,
     routeRules: {},
-    _defaultLoader: "",
+    _defaultLoader: "BasicLoader",
     _activeLoader: "",
   },
   async setup(options, nuxt) {
