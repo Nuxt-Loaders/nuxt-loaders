@@ -25,13 +25,13 @@ const checkRoutePatternValidity = (
   }
 
   // Validate route patterns: must start with "/" and contain valid path segments
-  const routePattern = /^\/[\w\-/]*$/;
+  const routePattern = /^\/[\w\-/]*(\/\*)?$/;
 
   if (!routePattern.test(route)) {
     return {
       valid: false,
       reason:
-        "Route pattern is invalid. Must start with '/' and contain only alphanumeric characters, hyphens, underscores, or slashes.",
+        "Route pattern is invalid. Must start with '/' and contain only alphanumeric characters, hyphens, underscores, astrix or slashes.",
     };
   }
 
@@ -118,7 +118,7 @@ export const getActiveLoader = (
   const rules = Object.keys(routeRules).filter((rule) => {
     if (!path.startsWith(rule)) return false;
 
-    if (!path.endsWith("*") && path != rule) return false;
+    if (!rule.endsWith("/*") && path != rule) return false;
 
     return true;
   });
