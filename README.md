@@ -64,7 +64,7 @@ export default defineNuxtConfig({
     // Define rules for which loader to use on which route
     routeRules: {
       "/": "MyLoader",
-      "/admin/**": "AdminLoader",
+      "/admin/*": "AdminLoader",
     },
   },
 });
