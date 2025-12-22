@@ -1,8 +1,8 @@
 {
   "name": "nuxt-loaders",
-  "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "version": "1.0.1",
+  "description": "Simple loading screen engine for Nuxt 4+",
+  "repository": "haileabt/nuxt-loaders",
   "license": "MIT",
   "type": "module",
   "exports": {
