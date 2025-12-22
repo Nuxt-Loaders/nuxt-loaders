@@ -63,6 +63,6 @@ jobs:
         run: npx nypm@latest i
 
       - name: Publish
-        run: pnpm publish --no-git-checks
+        run: pnpm release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
