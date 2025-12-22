@@ -17,11 +17,20 @@
 - Loaders removing not updating config fixed ([47af759](https://github.com/haileabt/nuxt-loaders/commit/47af759))
 - Fixed linting issues ([c8bf4b3](https://github.com/haileabt/nuxt-loaders/commit/c8bf4b3))
 - Fixed template path ([cdcbc1a](https://github.com/haileabt/nuxt-loaders/commit/cdcbc1a))
+- Fixed release workflow not releasing due to script error ([ab28d64](https://github.com/haileabt/nuxt-loaders/commit/ab28d64))
 
 ### 📖 Documentation
 
 - Updated readme ([9b7f6f3](https://github.com/haileabt/nuxt-loaders/commit/9b7f6f3))
 - Added contribuition and code of conduct guides ([36273c1](https://github.com/haileabt/nuxt-loaders/commit/36273c1))
+
+### 🏡 Chore
+
+- Udpated library version ([6eedbd6](https://github.com/haileabt/nuxt-loaders/commit/6eedbd6))
+
+### 🤖 CI
+
+- Added a release workflow ([e14b284](https://github.com/haileabt/nuxt-loaders/commit/e14b284))
 
 ### ❤️ Contributors
 
