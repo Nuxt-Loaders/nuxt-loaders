@@ -1,6 +1,26 @@
 {
-    "basic": {
-        "file": "BasicLoader.vue",
-        "version": "v1.0.0"
-    }
+  "pulse-bail": {
+    "file": "PulseRailLoader.vue",
+    "version": "v1.0.0"
+  },
+  "triple-bar": {
+    "file": "TripleBarLoader.vue",
+    "version": "v1.0.0"
+  },
+  "triple-flip": {
+    "file": "TripleFlipLoader.vue",
+    "version": "v1.0.0"
+  },
+  "step-gradient": {
+    "file": "StepGradientLoader.vue",
+    "version": "v1.0.0"
+  },
+  "circular": {
+    "file": "CircularLoader.vue",
+    "version": "v1.0.0"
+  },
+  "dots": {
+    "file": "TriDotLoader.vue",
+    "version": "v1.0.0"
+  }
 }
