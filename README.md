@@ -80,9 +80,25 @@ export default defineNuxtConfig({
 
 ## Usage
 
-1. Create your loader components in `app/components/loaders` (or your configured `loadersDir`).
-2. The module will automatically register these components.
-3. Use `routeRules` in your `nuxt.config.ts` to specify which loader should be active for specific routes.
+1.  **Add the Loader Component**:
+    Add the `<Loader />` component to your `app.vue` (or layout) and control its visibility using `useLoader`.
+
+    ```vue
+    <script setup lang="ts">
+    const { isLoading } = useLoader();
+    </script>
+
+    <template>
+      <Loader v-if="isLoading" />
+      <NuxtPage />
+    </template>
+    ```
+
+2.  **Create your loader components**:
+    Place them in `app/components/loaders` (or your configured `loadersDir`).
+
+3.  **Configure Route Rules**:
+    Use `routeRules` in your `nuxt.config.ts` to specify which loader should be active for specific routes.
 
 Example loader component (`app/components/loaders/MyLoader.vue`):
 
