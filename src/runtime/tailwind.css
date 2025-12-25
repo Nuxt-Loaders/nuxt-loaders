@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@source "./**/*.{vue,js,ts,html}";
+@source "../components/**/*.{vue,js,ts}";
+@source "../pages/**/*.{vue,js,ts}";
+@source "../layouts/**/*.{vue,js,ts}";

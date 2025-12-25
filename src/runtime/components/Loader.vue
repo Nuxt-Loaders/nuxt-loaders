@@ -1,5 +1,5 @@
 <template>
-  <div :class="[className]">
+  <div :class="[className, 'w-[100vw] h-[100svh] absolute top-0 left-0 z-50 grid place-items-center bg-white']">
     <component :is="loaderName" />
   </div>
 </template>

@@ -5,18 +5,19 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
-const dots = ref(".");
+const dots = ref('.');
+
+let interval: NodeJS.Timeout;
 
 onMounted(() => {
-    setInterval(() => {
-        dots.value += ".";
-        if (dots.value.length > 3) {
-            dots.value = ".";
-        }
-    }, 500)
-})
+    interval = setInterval(() => {
+        dots.value = dots.value.length >= 3 ? '.' : dots.value + '.';
+    }, 500);
+});
 
-withDefaults(defineProps<{ className?: string }>(), { className: "" })
+onUnmounted(() => clearInterval(interval));
+
+withDefaults(defineProps<{ className?: string }>(), { className: '' });
 </script>
