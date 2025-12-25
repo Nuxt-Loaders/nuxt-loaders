@@ -25,7 +25,7 @@ const checkRoutePatternValidity = (
   }
 
   // Validate route patterns: must start with "/" and contain valid path segments
-  const routePattern = /^\/[\w\-/]*(\/\*)?$/;
+  const routePattern = /^\/[\w\-/]*(?:\/\*)?$/;
 
   if (!routePattern.test(route)) {
     return {
