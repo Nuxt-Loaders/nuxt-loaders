@@ -1,4 +1,8 @@
 {
+  "basic": {
+    "file": "BasicLoader.vue",
+    "version": "v1.0.0"
+  },
   "pulse-bail": {
     "file": "PulseRailLoader.vue",
     "version": "v1.0.0"
