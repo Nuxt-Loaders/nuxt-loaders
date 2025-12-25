@@ -11,10 +11,5 @@ export default defineNuxtConfig({
   loaders: {
     autoSetup: true,
     loadersDir: "./app/components/load",
-    routeRules: {
-      "/": "BasicLoader",
-      "/about": "BasicLoader",
-      "/home": "BasicLoader",
-    },
   },
 });

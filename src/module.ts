@@ -34,7 +34,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     autoSetup: true,
     routeRules: {},
-    _defaultLoader: "BasicLoader",
+    _defaultLoader: "DefaultLoader",
     _activeLoader: "",
   },
   async setup(options, nuxt) {
@@ -120,7 +120,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         getDefaultLoader(validatedLoaderRules) ?? "";
     }
     nuxt.options.runtimeConfig.public.loaders._defaultLoader =
-      getDefaultLoader(validatedLoaderRules) ?? "";
+      getDefaultLoader(validatedLoaderRules) ?? "DefaultLoader";
 
     addPlugin(resolver.resolve("./runtime/plugin"));
   },

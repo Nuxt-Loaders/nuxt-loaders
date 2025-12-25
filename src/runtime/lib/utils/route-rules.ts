@@ -95,20 +95,23 @@ export const validateLoaderRules = (routeRules: Record<string, string>) => {
   return newRules;
 };
 
-export const getDefaultLoader = (routeRules: Record<string, string>) => {
+export const getDefaultLoader = (
+  routeRules: Record<string, string>,
+  defaultLoaderName: string = "DefaultLoader"
+) => {
   const defaultLoader = Object.keys(routeRules).filter((key) => {
     return key === "*" || key === "/";
   });
 
   if (defaultLoader.length <= 0) {
-    return "";
+    return defaultLoaderName;
   }
 
   if (defaultLoader.length > 1) {
     return routeRules["*"];
   }
 
-  return routeRules[defaultLoader[0] as string];
+  return routeRules[defaultLoader[0] as string] || defaultLoaderName;
 };
 
 export const getActiveLoader = (
