@@ -23,6 +23,7 @@
   "files": [
     "dist"
   ],
+  "keywords": ["nuxt", "nuxt 4", "nuxt-loaders", "loaders", "loading screens", "vue"],
   "bin": {
     "loaders": "./dist/bin/loaders.mjs"
   },

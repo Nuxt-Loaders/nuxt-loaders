@@ -1,6 +1,10 @@
 # Dependencies
 node_modules
 
+
+*.tex
+report/
+*.pdf
 # Logs
 *.log*
 
