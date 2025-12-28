@@ -4,7 +4,7 @@
 
 ## Usage
 
-The CLI is available via the `nuxt-loaders` command (or `nl` alias if configured).
+The CLI is available via the `loaders` command.
 
 ```bash
 npx loaders <command> [options]
