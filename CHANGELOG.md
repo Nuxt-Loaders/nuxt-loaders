@@ -1,5 +1,17 @@
 
 
+## v1.1.2
+
+[compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.1.1...v1.1.2)
+
+### 🩹 Fixes
+
+- Fixed '/*' also being considered when comparing path length for route rule determination ([ca31c64](https://github.com/haileabt/nuxt-loaders/commit/ca31c64))
+
+### ❤️ Contributors
+
+- HaileabT <haileabtesfaye11@gmail.com>
+
 ## v1.1.1
 
 [compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.1.0...v1.1.1)
