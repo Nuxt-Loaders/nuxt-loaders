@@ -119,17 +119,20 @@ export const getActiveLoader = (
   path: string
 ) => {
   if (path.endsWith("/")) {
-    path = path.substring(0, -1);
+    path = path.slice(0, -1);
   }
 
   const rules = Object.keys(routeRules).filter((rule) => {
     if (rule.endsWith("/")) {
-      rule = rule.substring(0, -1);
+      rule = rule.slice(0, -1);
+    }
+    if (!rule.endsWith("/*") && path != rule) return false;
+
+    if (rule.endsWith("/*")) {
+      rule = rule.slice(0, -2);
     }
 
     if (!path.startsWith(rule)) return false;
-
-    if (!rule.endsWith("/*") && path != rule) return false;
 
     return true;
   });

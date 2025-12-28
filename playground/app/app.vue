@@ -1,5 +1,5 @@
 <template>
-  <Loader v-if="isLoading" />
+  <Loader v-if="isLoading" class="bg-black! z-[1000]" />
   <NuxtPage />
 </template>
 

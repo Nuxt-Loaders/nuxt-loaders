@@ -10,6 +10,10 @@ export default defineNuxtConfig({
   },
   loaders: {
     autoSetup: true,
-    loadersDir: "./app/components/load",
+    loadersDir: "./app/components/loaders",
+    routeRules: {
+      "*": "StepGradientLoader",
+      "/about/*": "PulseRailLoader",
+    },
   },
 });
