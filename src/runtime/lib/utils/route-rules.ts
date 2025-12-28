@@ -142,6 +142,12 @@ export const getActiveLoader = (
   }
 
   const rule = rules.reduce((prev, curr) => {
+    if (curr.endsWith("/*")) {
+      curr = curr.slice(0, -2);
+    }
+    if (prev.endsWith("/*")) {
+      prev = prev.slice(0, -2);
+    }
     if (curr.split("/").length > prev.split("/").length) return curr;
     return prev;
   });
