@@ -1,5 +1,21 @@
 
 
+## v1.1.1
+
+[compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.1.0...v1.1.1)
+
+### 🩹 Fixes
+
+- Fixed route rule parsing logic ([5475743](https://github.com/haileabt/nuxt-loaders/commit/5475743))
+
+### 📖 Documentation
+
+- Added docs ([7d7221e](https://github.com/haileabt/nuxt-loaders/commit/7d7221e))
+
+### ❤️ Contributors
+
+- HaileabT <haileabtesfaye11@gmail.com>
+
 ## v1.1.0
 
 [compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.0.1...v1.1.0)

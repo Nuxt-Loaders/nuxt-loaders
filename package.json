@@ -1,9 +1,10 @@
 {
   "name": "nuxt-loaders",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple loading screen engine for Nuxt 4+",
   "repository": "haileabt/nuxt-loaders",
   "license": "MIT",
+  "homepage": "https://nuxt-loaders.vercel.app",
   "type": "module",
   "exports": {
     ".": {
