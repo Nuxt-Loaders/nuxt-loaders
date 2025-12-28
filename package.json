@@ -1,6 +1,6 @@
 {
   "name": "nuxt-loaders",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Simple loading screen engine for Nuxt 4+",
   "repository": "haileabt/nuxt-loaders",
   "license": "MIT",
@@ -23,7 +23,14 @@
   "files": [
     "dist"
   ],
-  "keywords": ["nuxt", "nuxt 4", "nuxt-loaders", "loaders", "loading screens", "vue"],
+  "keywords": [
+    "nuxt",
+    "nuxt 4",
+    "nuxt-loaders",
+    "loaders",
+    "loading screens",
+    "vue"
+  ],
   "bin": {
     "loaders": "./dist/bin/loaders.mjs"
   },

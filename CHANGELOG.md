@@ -1,5 +1,21 @@
 
 
+## v1.1.3
+
+[compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.1.2...v1.1.3)
+
+### 🩹 Fixes
+
+- Fixed cli documentation ([3a7d9f5](https://github.com/haileabt/nuxt-loaders/commit/3a7d9f5))
+
+### 🏡 Chore
+
+- Added tags for package discovery ([cb5664a](https://github.com/haileabt/nuxt-loaders/commit/cb5664a))
+
+### ❤️ Contributors
+
+- HaileabT <haileabtesfaye11@gmail.com>
+
 ## v1.1.2
 
 [compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.1.1...v1.1.2)
