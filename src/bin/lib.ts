@@ -125,7 +125,7 @@ export const handleAddLoader = async (
   const loadersPath = join(process.cwd(), loadersConfig.loadersDir);
 
   if (!existsSync(loadersPath)) {
-    mkdirSync(loadersPath);
+    mkdirSync(loadersPath, { recursive: true });
     logInfoCli(`Created loaders directory at ${loadersPath}`);
   }
 
