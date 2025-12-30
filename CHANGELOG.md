@@ -1,5 +1,23 @@
 
 
+## v1.1.4
+
+[compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.1.3...v1.1.4)
+
+### 🚀 Enhancements
+
+- Add test fixture and improve docs ([e2cf2ae](https://github.com/haileabt/nuxt-loaders/commit/e2cf2ae))
+
+### 🩹 Fixes
+
+- Loading screen container has a black background now ([81151ae](https://github.com/haileabt/nuxt-loaders/commit/81151ae))
+- Added logic in the cli too to recursively make directory upon trying to add a new loader ([d7c898c](https://github.com/haileabt/nuxt-loaders/commit/d7c898c))
+
+### ❤️ Contributors
+
+- HaileabT <Haileabtesfaye11@gmail.com>
+- HenokTade <henoktademe17@gmail.com>
+
 ## v1.1.3
 
 [compare changes](https://github.com/haileabt/nuxt-loaders/compare/v1.1.2...v1.1.3)
