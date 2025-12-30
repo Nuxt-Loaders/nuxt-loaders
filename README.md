@@ -22,20 +22,20 @@ Simple loading screen engine for Nuxt 4+.
 
 ## Features
 
-- 🔄 **Automatic Loader Registration**: Automatically registers loader components from your specified directory.
+- 🔄 **Automatic Loader Registration**: Automatically registers loader components from your specified directory as global components.
 - 🛣️ **Route-based Configuration**: Assign specific loaders to different routes using `routeRules`.
 - 🎨 **TailwindCSS Integration**: Includes TailwindCSS support out of the box.
-- ⚡ **Zero Configuration**: Works with sensible defaults, but fully customizable.
+- ⚡ **Zero Configuration**: Works with sensible defaults, but is fully customizable.
 
 ## Quick Setup
 
-1. Add `nuxt-loaders` dependency to your project
+1. Add `nuxt-loaders` dependency to your project:
 
 ```bash
 npx nuxi module add nuxt-loaders
 ```
 
-2. Add `nuxt-loaders` to the `modules` section of `nuxt.config.ts`
+2. Add `nuxt-loaders` to the `modules` section of `nuxt.config.ts` (if not already added by nuxi):
 
 ```ts
 export default defineNuxtConfig({
@@ -47,7 +47,7 @@ That's it! You can now use Nuxt Loaders in your Nuxt app ✨
 
 ## Configuration
 
-You can configure the module in your `nuxt.config.ts`:
+You can configure the module in your `nuxt.config.ts`. The components in `loadersDir` will be automatically imported and can be referenced by name in `routeRules`.
 
 ```ts
 export default defineNuxtConfig({
